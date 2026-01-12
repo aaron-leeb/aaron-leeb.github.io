@@ -13,7 +13,7 @@ const Hero = () => {
                 pursuing a career as a Software Developer.
             </h1>
             <p className='mt-4 text-lg text-gray-100 px-4 md:px-32'>
-                I am interested in contributing to a company focused on
+                I am looking for an internship at a company focused on
                 innovative and impactful software solutions.
             </p>
             <div className='mt-8 space-x-4'>
