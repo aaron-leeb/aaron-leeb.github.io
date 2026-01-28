@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar.tsx'
 import Hero from './components/Hero.tsx'
 import About from './components/About.tsx'
+import Experience from './components/Experience.tsx'
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <Experience />
     </div>
   )
 }
