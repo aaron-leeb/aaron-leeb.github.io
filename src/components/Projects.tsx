@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useGitHubProfile } from "../hooks/useGitHubProfile";
+import sankeyImage from '../assets/Sankey-diagram.png';
 
 const Projects = () => {
+    const [activeImage, setActiveImage] = useState<{ src: string; title: string } | null>(null);
     const {
         githubProfile,
         contributions,
         loading,
         formatEvent,
     } = useGitHubProfile("aaron-leeb");
+
+    useEffect(() => {
+        if (!activeImage) return;
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                setActiveImage(null);
+            }
+        };
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [activeImage]);
 
     const projects = [
         {
@@ -21,7 +34,7 @@ const Projects = () => {
             title: "Student Pathways Visualizer",
             description: "Description of another project you've worked on.",
             technologies: ["Python", "Azure Functions", "Plotly", "Pandas", "Javascript", "React", "Material UI"],
-            image: null,
+            image: sankeyImage,
             link: "#"
         },
         {
@@ -84,12 +97,19 @@ const Projects = () => {
                         <div key={index} className='bg-zinc-700 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow'>
                             <div className='flex flex-col md:flex-row'>
                                 {project.image && (
-                                    <div className='md:w-2/5 h-24 md:h-auto'>
-                                        <img 
-                                            src={project.image} 
-                                            alt={project.title}
-                                            className='w-full h-full object-cover block'
-                                        />
+                                    <div className='md:w-2/5 h-80 md:h-auto p-3'>
+                                        <button
+                                            type='button'
+                                            onClick={() => setActiveImage({ src: project.image, title: project.title })}
+                                            className='w-full h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded'
+                                            aria-label={`Open ${project.title} image`}
+                                        >
+                                            <img 
+                                                src={project.image} 
+                                                alt={project.title}
+                                                className='w-full h-full object-cover block rounded'
+                                            />
+                                        </button>
                                     </div>
                                 )}
                                 <div className='p-6 md:w-3/5 flex flex-col justify-between'>
@@ -104,18 +124,36 @@ const Projects = () => {
                                             ))}
                                         </div>
                                     </div>
-                                    <a 
-                                        href={project.link}
-                                        className='inline-block bg-sky-600 hover:bg-sky-700 px-4 py-2 rounded transition-colors w-fit'
-                                    >
-                                        View Project
-                                    </a>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
+            {activeImage && (
+                <div
+                    className='fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4'
+                    role='dialog'
+                    aria-modal='true'
+                    aria-label={`${activeImage.title} image preview`}
+                    onClick={() => setActiveImage(null)}
+                >
+                    <button
+                        type='button'
+                        className='absolute top-4 right-4 text-white text-2xl leading-none'
+                        aria-label='Close image preview'
+                        onClick={() => setActiveImage(null)}
+                    >
+                        ×
+                    </button>
+                    <img
+                        src={activeImage.src}
+                        alt={activeImage.title}
+                        className='max-h-[90vh] max-w-[90vw] object-contain rounded shadow-2xl'
+                        onClick={(event) => event.stopPropagation()}
+                    />
+                </div>
+            )}
         </div>
     );
 }
