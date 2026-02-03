@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useGitHubProfile } from "../hooks/useGitHubProfile";
 import sankeyImage from '../assets/Sankey-diagram.png';
 

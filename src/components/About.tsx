@@ -1,4 +1,3 @@
-import React from "react";
 import AboutImage from '../assets/Placeholder pic 2.jpg';
 
 const About = () => {

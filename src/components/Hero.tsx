@@ -1,4 +1,3 @@
-import React from "react";
 import heroImage from '../assets/Placeholder pic 1.jpg';
 
 const Hero = () => {

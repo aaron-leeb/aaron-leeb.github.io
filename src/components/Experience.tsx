@@ -1,5 +1,3 @@
-import React from "react";
-
 const Experience = () => {
     const experience = [
         {
@@ -18,9 +16,9 @@ const Experience = () => {
             title: "MavPass Leader",
             company: "Minnesota State University, Mankato",
             period: "Jan 2025 - Dec 2026",
-            description: "•	Facilitate hands-on learning sessions for students taking Algorithms in Python\n" +
-            "• Create weekly lesson plans that incorporate engaging activities to help students understand course content\n" +
-            "• Attend training to further develop facilitation skills and methods for planning sessions",
+            description: "•	Facilitated hands-on learning sessions for students taking Algorithms in Python\n" +
+            "• Created weekly lesson plans that incorporate engaging activities to help students understand course content\n" +
+            "• Attended training to further develop facilitation skills and methods for planning sessions",
             skills: ["Leadership", "Python", "Communication", "Algorithms", "Facilitation"]
         }
     ];

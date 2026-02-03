@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Navbar = () => {
     return (
         <nav className='bg-gradient-to-r from-sky-900 to-teal-900 text-white px-8 md:px-16 lg:px-48'>
