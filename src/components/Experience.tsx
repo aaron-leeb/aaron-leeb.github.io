@@ -10,7 +10,7 @@ const Experience = () => {
             "• Run and analyze regression suites and document results in Report Portal to ensure less than 1% error rate\n" +
             "• Write unit tests in Java using testing modules (e.g., Junit) to verify newly implemented API features\n" +
             "• Decrease high and critical vulnerabilities identified by SNYK in APIs, JARs, and microservices by 100%\n" +
-            "• Added logging functionality to improve monitoring of APIs using Datadog",
+            "• Add logging functionality to improve monitoring of APIs using Datadog",
             skills: ["Testing", "APIs", "Java", "C#", "SNYK", "Junit", "Datadog"]
         },
 
