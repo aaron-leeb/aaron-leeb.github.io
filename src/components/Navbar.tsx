@@ -2,7 +2,7 @@ const Navbar = () => {
     return (
         <nav className='bg-gradient-to-r from-sky-900 to-teal-900 text-white px-8 md:px-16 lg:px-48'>
                 <div className='container py-4 flex justify-center md:justify-between items-center'>
-                    <div className='text-3xl font-bold hidden md:inline'>Aaron</div>
+                    <div className='text-3xl font-bold hidden md:inline'>Aaron Leeb</div>
                     <div className='space-x-8 text-lg'>
                         <a href="#about" className='hover:text-gray-300'>About</a>
                         <a href="#experience" className='hover:text-gray-300'>Experience</a>

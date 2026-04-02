@@ -1,4 +1,4 @@
-import heroImage from '../assets/Placeholder pic 1.jpg';
+import heroImage from '../assets/Headshot2.jpg';
 
 const Hero = () => {
     return (
@@ -9,7 +9,7 @@ const Hero = () => {
                 I'm {" "}
                 <span className='text-transparent bg-clip-text bg-sky-700'>Aaron Leeb</span>
                 , a Computer Science student 
-                pursuing a career as a Software Developer.
+                pursuing a career as a software developer.
             </h1>
             <p className='mt-16 text-lg text-gray-100 px-4 md:px-32'>
                 I am looking for an internship at a company focused on

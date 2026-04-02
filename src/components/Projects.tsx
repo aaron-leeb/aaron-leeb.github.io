@@ -47,9 +47,9 @@ const Projects = () => {
     ];
 
     return (
-        <div className='bg-zinc-800 text-white py-32' id='projects'>
+        <div className='bg-zinc-800 text-white py-32'>
             <div className='container mx-auto px-8 md:px-16 lg:px-24'>
-                <div className='bg-sky-900 px-12 py-8 justify-center rounded mb-8 mx-auto block shadow-xl shadow-black/30'>
+                <div className='bg-sky-900 px-12 py-8 justify-center rounded mb-8 mx-auto block shadow-xl shadow-black/30 scroll-mt-4' id='projects'>
                     <h2 className='text-4xl font-bold text-center'>Projects</h2>
                 </div>
                 {!loading && githubProfile && (
