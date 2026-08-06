@@ -1,6 +1,18 @@
 import { useEffect, useState } from "react";
 import { useGitHubProfile } from "../hooks/useGitHubProfile";
 import sankeyImage from '../assets/Sankey-diagram.png';
+import rfPresentation from '../assets/RF-presentation.pdf';
+import rfImage from '../assets/RF-visualization.png';
+
+type Project = {
+    title: string;
+    description: React.ReactNode;
+    technologies: string[];
+    image: string | null;
+    link: string;
+    presentationUrl?: string | null;
+    presentationLabel?: string;
+};
 
 const Projects = () => {
     const [activeImage, setActiveImage] = useState<{ src: string; title: string } | null>(null);
@@ -22,27 +34,52 @@ const Projects = () => {
         return () => window.removeEventListener("keydown", handleKeyDown);
     }, [activeImage]);
 
-    const projects = [
+    const projects: Project[] = [
         {
             title: "NextGen Cognitive Radio",
-            description: "Brief description of your project and what you built.",
+            description: (
+                <>
+                    This project involved developing a proof of concept cognitive radio system for {" "}
+                    <a
+                        href="https://www.nextgenrf.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-400 underline hover:text-blue-300 hover:no-underline"
+                    >
+                        NextGen RF
+                    </a>
+                    . We were provided a Raspberry Pi and WiFi adapter to scan the network environment. Our
+                    implementation involved building a pipeline to collect, process, store, and visualize the
+                    network data, as well as predict future health of WiFi channels based on historical data. We
+                    wrote the implementation in Python and used libraries and tools such as Linux Wireless,
+                    Scikit Learn, Plotly Dash, and Numpy. I was the AI/ML Engineer on this project and was responsible
+                    for researching, designing, and implementing the weighted scoring algorithm and random forest model
+                    used to predict the future health of WiFi the channels.
+                </>
+            ),
             technologies: ["Raspberry Pi", "Scikit Learn", "Python", "Plotly Dash", "iwconfig", "Linux", "Numpy"],
-            image: null,
-            link: "#"
+            image: rfImage,
+            link: "#",
+            presentationUrl: rfPresentation,
+            presentationLabel: "More Details"
         },
         {
             title: "Student Pathways Visualizer",
             description: "Description of another project you've worked on.",
             technologies: ["Python", "Azure Functions", "Plotly", "Pandas", "Javascript", "React", "Material UI"],
             image: sankeyImage,
-            link: "#"
+            link: "#",
+            presentationUrl: null,
+            presentationLabel: "More Details"
         },
         {
             title: "BT Towne Virtual Environment",
             description: "Description of another project you've worked on.",
             technologies: ["Python", "Docker", "Pygame", "I/O Handling", "OOP", "ssh", "Accessibility"],
             image: null,
-            link: "#"
+            link: "#",
+            presentationUrl: null,
+            presentationLabel: "More Details"
         }
     ];
 
@@ -100,12 +137,12 @@ const Projects = () => {
                                     <div className='md:w-2/5 h-80 md:h-auto p-3'>
                                         <button
                                             type='button'
-                                            onClick={() => setActiveImage({ src: project.image, title: project.title })}
+                                            onClick={() => setActiveImage({ src: project.image!, title: project.title })}
                                             className='w-full h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded'
                                             aria-label={`Open ${project.title} image`}
                                         >
                                             <img 
-                                                src={project.image} 
+                                                src={project.image!} 
                                                 alt={project.title}
                                                 className='w-full h-full object-cover block rounded'
                                             />
@@ -123,6 +160,17 @@ const Projects = () => {
                                                 </span>
                                             ))}
                                         </div>
+                                        {project.presentationUrl && (
+                                            <a
+                                                href={project.presentationUrl}
+                                                target='_blank'
+                                                rel='noopener noreferrer'
+                                                type='application/pdf'
+                                                className='inline-block bg-sky-700 hover:bg-sky-600 text-white text-sm font-semibold px-4 py-2 rounded transition-colors'
+                                            >
+                                                {project.presentationLabel}
+                                            </a>
+                                        )}
                                     </div>
                                 </div>
                             </div>
