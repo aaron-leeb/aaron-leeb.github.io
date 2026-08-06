@@ -48,13 +48,13 @@ const Projects = () => {
                     >
                         NextGen RF
                     </a>
-                    . We were provided a Raspberry Pi and WiFi adapter to scan the network environment. Our
+                    . My team was provided a Raspberry Pi and WiFi adapter to scan the network environment. Our
                     implementation involved building a pipeline to collect, process, store, and visualize the
-                    network data, as well as predict future health of WiFi channels based on historical data. We
-                    wrote the implementation in Python and used libraries and tools such as Linux Wireless,
+                    network data, as well as predict future health of 2.4 and 5 GHz WiFi channels based on historical 
+                    data. We wrote the implementation in Python and used libraries and tools such as Linux Wireless,
                     Scikit Learn, Plotly Dash, and Numpy. I was the AI/ML Engineer on this project and was responsible
                     for researching, designing, and implementing the weighted scoring algorithm and random forest model
-                    used to predict the future health of WiFi the channels.
+                    used to predict the future health of the WiFi channels.
                 </>
             ),
             technologies: ["Raspberry Pi", "Scikit Learn", "Python", "Plotly Dash", "iwconfig", "Linux", "Numpy"],
