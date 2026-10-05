@@ -1,12 +1,16 @@
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
     return (
         <nav className='bg-gradient-to-r from-sky-900 to-teal-900 text-white px-8 md:px-16 lg:px-48'>
                 <div className='container py-4 flex justify-center md:justify-between items-center'>
-                    <div className='text-3xl font-bold hidden md:inline'>Aaron Leeb</div>
+                    <Link to="/" className='text-3xl font-bold hidden md:inline'>Aaron Leeb</Link>
                     <div className='space-x-8 text-lg'>
-                        <a href="#about" className='hover:text-gray-300'>About</a>
-                        <a href="#experience" className='hover:text-gray-300'>Experience</a>
-                        <a href="#projects" className='hover:text-gray-300'>Projects</a>
+                        <Link to="/#about" className='hover:text-gray-300'>About</Link>
+                        <Link to="/#experience" className='hover:text-gray-300'>Experience</Link>
+                        <Link to="/#projects" className='hover:text-gray-300'>Projects</Link>
+
+                        <Link to="/blog" className='hover:text-gray-300'>Blog</Link>
                         
                     </div>
                     <button className='bg-white text-zinc-800 hidden md:inline
