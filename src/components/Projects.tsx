@@ -106,9 +106,9 @@ const Projects = () => {
                     and Docker to create a scalable and maintainable virtual environment.
                 </>
             ),
-            technologies: ["Python", "Docker", "I/O Handling", "Object Oriented Programming", "Accessibility"],
+            technologies: ["Python", "Docker", "Websockets","I/O Handling", "Object Oriented Programming", "Accessibility"],
             image: null,
-            link: "https://github.com/sophabot/BT-Towne",
+            link: "#",
             blogUrl: "https://www.blazietech.com/post/not-just-a-new-feature-blazie-products-have-a-new-town",
             buttonLabel: "More Details"
         }
