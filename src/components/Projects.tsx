@@ -191,12 +191,12 @@ const Projects = () => {
                                                 </span>
                                             ))}
                                         </div>
-                                        {project.presentationUrl || project.blogUrl && (
+                                        {(project.presentationUrl || project.blogUrl) && (
                                             <a
-                                                href={project.presentationUrl || project.blogUrl}
+                                                href={project.presentationUrl || project.blogUrl || undefined}
                                                 target='_blank'
                                                 rel='noopener noreferrer'
-                                                type='application/pdf'
+                                                type={project.presentationUrl ? 'application/pdf' : undefined}
                                                 className='inline-block bg-sky-700 hover:bg-sky-600 text-white text-sm font-semibold px-4 py-2 rounded transition-colors'
                                             >
                                                 {project.buttonLabel}
