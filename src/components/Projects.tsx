@@ -12,7 +12,8 @@ type Project = {
     image: string | null;
     link: string;
     presentationUrl?: string | null;
-    presentationLabel?: string;
+    buttonLabel?: string;
+    blogUrl?: string | null;
 };
 
 const Projects = () => {
@@ -62,7 +63,7 @@ const Projects = () => {
             image: rfImage,
             link: "#",
             presentationUrl: rfPresentation,
-            presentationLabel: "More Details"
+            buttonLabel: "More Details"
         },
         {
             title: "Student Pathways Visualizer",
@@ -81,16 +82,35 @@ const Projects = () => {
             image: sankeyImage,
             link: "#",
             presentationUrl: sankeyPresentation,
-            presentationLabel: "More Details"
+            buttonLabel: "More Details"
         },
         {
             title: "BT Towne Virtual Environment",
-            description: "Description of another project you've worked on.",
-            technologies: ["Python", "Docker", "Pygame", "I/O Handling", "OOP", "ssh", "Accessibility"],
+            description: (
+                <>
+                    This project involved creating a virtual environment called BT Towne for an industry client, {""}
+                    <a
+                        href="https://www.blazietech.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-400 underline hover:text-blue-300 hover:no-underline"
+                    >
+                        Blazie Technologies
+                    </a>
+                    . They're the creators of the BT Speak Pro braille note-taking device. During this project, 
+                    my role was the Documentation Lead, which involved creating and maintaining comprehensive documentation,
+                    such as user guides, technical setup guide for future developers, and the project README.
+                    I also contributed to the design and implementation of the client side scripts associated with input and 
+                    output handling and interactive audio player functionality. This project exposed me to the challenges and
+                    rewarding aspects of working on accessibility-focused projects. Our implementation used Python, Websockets,
+                    and Docker to create a scalable and maintainable virtual environment.
+                </>
+            ),
+            technologies: ["Python", "Docker", "I/O Handling", "Object Oriented Programming", "Accessibility"],
             image: null,
-            link: "#",
-            presentationUrl: null,
-            presentationLabel: "More Details"
+            link: "https://github.com/sophabot/BT-Towne",
+            blogUrl: "https://www.blazietech.com/post/not-just-a-new-feature-blazie-products-have-a-new-town",
+            buttonLabel: "More Details"
         }
     ];
 
@@ -171,15 +191,15 @@ const Projects = () => {
                                                 </span>
                                             ))}
                                         </div>
-                                        {project.presentationUrl && (
+                                        {project.presentationUrl || project.blogUrl && (
                                             <a
-                                                href={project.presentationUrl}
+                                                href={project.presentationUrl || project.blogUrl}
                                                 target='_blank'
                                                 rel='noopener noreferrer'
                                                 type='application/pdf'
                                                 className='inline-block bg-sky-700 hover:bg-sky-600 text-white text-sm font-semibold px-4 py-2 rounded transition-colors'
                                             >
-                                                {project.presentationLabel}
+                                                {project.buttonLabel}
                                             </a>
                                         )}
                                     </div>
