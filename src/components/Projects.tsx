@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useGitHubProfile } from "../hooks/useGitHubProfile";
 import sankeyImage from '../assets/Sankey-diagram.png';
+import sankeyPresentation from '../assets/Sankey-presentation.pdf';
 import rfPresentation from '../assets/RF-presentation.pdf';
 import rfImage from '../assets/RF-visualization.png';
 
@@ -65,11 +66,21 @@ const Projects = () => {
         },
         {
             title: "Student Pathways Visualizer",
-            description: "Description of another project you've worked on.",
+            description: (
+                <>
+                    This project involved creating a sankey visualizer for student pathways, allowing faculty to better understand 
+                    and analyze the progression of students through their academic journey. I was the team lead for the project
+                    and was responsible for communicating with stakeholders, gathering requirements, and overseeing the development
+                    process to ensure the successful completion of the project. Our implementation involved building a web-based
+                    visualizer using PlotlyJS, ReactJS, and Material UI to effectively display the sankey diagrams. We used 
+                    Azure Functions to handle backend processing, Pandas for data manipulation, and a SQL database for storing and 
+                    querying student data.
+                </>
+            ),
             technologies: ["Python", "Azure Functions", "Plotly", "Pandas", "Javascript", "React", "Material UI"],
             image: sankeyImage,
             link: "#",
-            presentationUrl: null,
+            presentationUrl: sankeyPresentation,
             presentationLabel: "More Details"
         },
         {
