@@ -136,7 +136,7 @@ const extractPostDetails = (post: PostManifest, content: string) => {
   const firstHeadingMatch = body.match(/^#{1,6}\s+(.+)$/m);
   const derivedTitleFromHeading = firstHeadingMatch?.[1]?.trim();
   const derivedTitleFromFile = post.file.replace(/\.[^.]+$/, '').trim();
-  const title = post.title?.trim() || frontmatter.title?.trim() || derivedTitleFromHeading || derivedTitleFromFile;
+  const title = post.title?.trim() || frontmatter.title?.trim() || derivedTitleFromFile || derivedTitleFromHeading;
 
   if (firstHeadingMatch && derivedTitleFromHeading && title === derivedTitleFromHeading && body.startsWith(firstHeadingMatch[0])) {
     body = body.slice(firstHeadingMatch[0].length).trimStart();
