@@ -5,13 +5,13 @@ const Hero = () => {
         <div className='bg-zinc-800 text-white text-center py-32'>
             <img src={heroImage} alt="Hero" className='mx-auto mb-8 w-48 rounded-full object-cover
             transform transition-transform duration-300 hover:scale-105'/>
-            <h1 className='text-4xl font-bold'>
+            <h1 className='text-3xl font-bold'>
                 I'm {" "}
                 <span className='text-transparent bg-clip-text bg-sky-700'>Aaron Leeb</span>
                 , a Computer Science student 
                 pursuing a career as a software developer/engineer.
             </h1>
-            <p className='mt-16 text-lg text-gray-100 px-4 md:px-32'>
+            <p className='mt-16 text-xl text-gray-100 px-4 md:px-32'>
                 I am looking for a full-time position at a company focused on
                 innovative and impactful software solutions.
             </p>
