@@ -1,10 +1,23 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
+    const location = useLocation();
+
     return (
-        <nav className='bg-gradient-to-r from-sky-900 to-teal-900 text-white px-2 sm:px-4 md:px-16 lg:px-48'>
+        <nav className='sticky top-0 z-50 bg-gradient-to-r from-sky-900 to-teal-900 text-white px-2 sm:px-4 md:px-16 lg:px-48'>
                 <div className='container mx-auto flex items-center justify-between gap-1 py-3 md:py-4'>
-                    <Link to="/" className='shrink-0 whitespace-nowrap text-sm font-bold max-[380px]:text-xs sm:text-base md:text-3xl'>Aaron Leeb</Link>
+                    <Link
+                        to="/"
+                        onClick={(event) => {
+                            if (location.pathname === '/' && !location.hash && event.button === 0 &&
+                                !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                            }
+                        }}
+                        className='shrink-0 whitespace-nowrap text-sm font-bold max-[380px]:text-xs sm:text-base md:text-3xl'
+                    >
+                        Aaron Leeb
+                    </Link>
                     <div className='flex min-w-0 flex-1 justify-center gap-2 whitespace-nowrap text-xs max-[380px]:gap-1.5 max-[380px]:text-[11px] sm:gap-3 md:gap-8 md:text-lg'>
                         <Link to="/#about" className='hover:text-gray-300'>About</Link>
                         <Link to="/#experience" className='hover:text-gray-300'>Experience</Link>
