@@ -1,8 +1,23 @@
 const Experience = () => {
     const experience = [
         {
-            title: "QA Engineer Intern",
-            company: "Maverick Software Consulting",
+            title: "Fellow",
+            company: <a href="https://btrust.tech" className="hover:text-blue-400 transition-colors duration-200" 
+            target="_blank" rel="noopener noreferrer">BTrust</a>,
+            period: "Aug 2026 - Present",
+            description: "• Contribute to Bitcoin Core and Sparrow Wallet through regression testing, debugging, and code reviews\n" +
+            "• Develop Python functional tests for Bitcoin Core, covering wallet startup behavior and block filter RPC edge cases\n" +
+            "• Write Java/JUnit tests for Sparrow Wallet, validating UR descriptor exports, multisig configurations, and wallet interoperability\n" +
+            "• Analyze C++, Python, and Java codebases to identify edge cases, improve test coverage, and prevent regressions\n" +
+            "• Collaborate with open-source maintainers through pull requests, technical discussions, and iterative code reviews\n" +
+            "• Participate in weekly learning sessions and homegroup meetings",
+            skills: ["Bitcoin Core", "Sparrow Wallet", "C++", "Python", "Java", "GitHub"]
+        },
+
+        {
+            title: "Software Engineer Intern",
+            company: <a href="https://mavericksoftwareconsulting.com" className="hover:text-blue-400 transition-colors duration-200" 
+            target="_blank" rel="noopener noreferrer">Maverick Software Consulting</a>,
             period: "May 2025 - Present",
             description: "• Work on projects for Legal Research Development team at Thomson Reuters using Java and C#\n" +
             "• Run and analyze regression suites and document results in Report Portal to ensure less than 1% error rate\n" +
@@ -14,7 +29,8 @@ const Experience = () => {
 
         {
             title: "MavPass Leader",
-            company: "Minnesota State University, Mankato",
+            company: <a href="https://mankato.mnsu.edu/academics/academic-support/student-support-centers/maverick-peer-facilitated-academic-support-system/" 
+            className="hover:text-blue-400 transition-colors duration-200" target="_blank" rel="noopener noreferrer">Minnesota State University, Mankato</a>,
             period: "Jan 2025 - Dec 2026",
             description: "•	Facilitated hands-on learning sessions for students taking Algorithms in Python\n" +
             "• Created weekly lesson plans that incorporate engaging activities to help students understand course content\n" +
@@ -32,7 +48,7 @@ const Experience = () => {
 
                 <div className='grid md:grid-cols-2 gap-8'>
                     {experience.map((exp, index) => (
-                        <div key={index} className='bg-zinc-700 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:bg-zinc-600 transition-shadow'>
+                        <div key={index} className='bg-zinc-700 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-200'>
                             <h3 className='text-2xl font-bold text-white mb-2'>{exp.title}</h3>
                             <p className='text-lg text-gray-200 mb-2'>{exp.company}</p>
                             <p className='text-sm text-gray-400 mb-4'>{exp.period}</p>
