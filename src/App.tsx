@@ -6,6 +6,7 @@ import About from './components/About.tsx'
 import Experience from './components/Experience.tsx'
 import Projects from './components/Projects.tsx'
 import Blog from './components/Blog.tsx'
+import Showcase from './components/Showcase.tsx'
 
 function ScrollToSection() {
   const location = useLocation()
@@ -49,6 +50,8 @@ function App() {
         } />
         {/* Route 2: The Blog Page (Everything at the '/blog' path) */}
         <Route path="/blog" element={<Blog />} />
+        {/* Route 3: Fellowship showcase */}
+        <Route path="/showcase" element={<Showcase />} />
       </Routes>
     </Router>
   )

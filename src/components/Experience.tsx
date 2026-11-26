@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom';
+
 const Experience = () => {
     const experience = [
         {
             title: "Fellow",
-            company: <a href="https://btrust.tech" className="hover:text-blue-400 transition-colors duration-200" 
+            company: <a href="https://btrust.tech" className="relative z-20 hover:text-blue-400 transition-colors duration-200" 
             target="_blank" rel="noopener noreferrer">BTrust</a>,
             period: "Aug 2026 - Present",
             description: "• Contribute to Bitcoin Core and Sparrow Wallet through regression testing, debugging, and code reviews\n" +
@@ -48,7 +50,7 @@ const Experience = () => {
 
                 <div className='grid md:grid-cols-2 gap-8'>
                     {experience.map((exp, index) => (
-                        <div key={index} className='bg-zinc-700 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-200'>
+                        <div key={index} className='relative bg-zinc-700 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-200'>
                             <h3 className='text-2xl font-bold text-white mb-2'>{exp.title}</h3>
                             <p className='text-lg text-gray-200 mb-2'>{exp.company}</p>
                             <p className='text-sm text-gray-400 mb-4'>{exp.period}</p>
@@ -60,6 +62,13 @@ const Experience = () => {
                                     </span>
                                 ))}
                             </div>
+                            {exp.title === "Fellow" && (
+                                <Link
+                                    to="/showcase"
+                                    aria-label="Open BTrust Fellowship showcase"
+                                    className="absolute inset-0 z-10 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400"
+                                />
+                            )}
                         </div>
                     ))}
                 </div>
