@@ -1,5 +1,12 @@
 test deploy
 
+# GitHub Pages routes
+
+The production build copies the app entry page to `dist/blog/index.html` and
+`dist/showcase/index.html` so those routes can be opened or refreshed directly
+on GitHub Pages. When adding another page route, add it to
+`scripts/copy-route-pages.mjs` as well.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
