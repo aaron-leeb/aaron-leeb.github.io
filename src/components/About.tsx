@@ -2,14 +2,14 @@ import AboutImage from '../assets/Headshot1.jpg';
 
 const About = () => {
     return (
-        <div className='bg-zinc-800 text-white py-32'>
+        <div className='bg-zinc-800 text-white py-20'>
             <div className='container mx-auto px-8 md:px-16 lg:px-24'>
                 <div className='bg-sky-900 px-12 py-8 justify-center rounded mb-8 mx-auto block shadow-xl shadow-black/30 scroll-mt-4' id='about'>
                     <h2 className='text-4xl font-bold text-center'>About Me</h2>
                 </div>
                 <div className='flex flex-col md:flex-row items-center md:space-x-24'>
                     <img src={AboutImage} alt="Headshot" 
-                    className='w-72 h-84 rounded object-cover mb-8 md:mb-0'/>
+                    className='w-72 h-auto rounded mb-8 md:mb-0'/>
                     <div className='flex-1'>
                         <p className='text-lg mb-16'>
                         <br /><br />Through my upper division coursework in computer science, I have gained hands on experience designing and developing <strong>full stack applications</strong>, utilizing <strong>agile methodologies</strong> throughout the lifecycle of a project, from planning and architecture to testing and deployment. These experiences strengthened my ability to write <strong>clean and maintainable code</strong>, collaborate effectively on teams, and solve complex technical problems under real constraints.

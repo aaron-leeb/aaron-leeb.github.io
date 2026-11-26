@@ -226,7 +226,7 @@ export default function Showcase() {
                 count + (category.title === title ? category.items.length : 0), 0), 0);
 
     return (
-        <main className="min-h-screen bg-zinc-800 py-32 text-white">
+        <main className="min-h-screen bg-zinc-800 pt-8 pb-32 text-white">
             <div className="container mx-auto px-8 md:px-16 lg:px-24">
                 <div className="mb-8 rounded bg-sky-900 px-12 py-8 shadow-xl shadow-black/30">
                     <h1 className="text-center text-4xl font-bold">BTrust Fellowship Showcase</h1>
@@ -343,6 +343,21 @@ export default function Showcase() {
                         );
                     })}
                 </div>
+
+                <section aria-labelledby="blogs-heading" className="mx-auto mt-16 max-w-4xl space-y-4">
+                    <h2
+                        id="blogs-heading"
+                        className="border-b border-zinc-600 pb-3 text-2xl font-bold"
+                    >
+                        Blog Posts
+                    </h2>
+                    <Link
+                        to="/blog"
+                        className="inline-block rounded-lg bg-zinc-700 p-6 text-sky-300 underline shadow-lg transition-colors hover:text-sky-200"
+                    >
+                        Read my blog posts
+                    </Link>
+                </section>
 
                 <section aria-labelledby="future-work-heading" className="mx-auto mt-16 max-w-4xl space-y-4">
                     <h2

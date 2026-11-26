@@ -2,7 +2,7 @@ import heroImage from '../assets/Headshot2.jpg';
 
 const Hero = () => {
     return (
-        <div className='bg-zinc-800 text-white text-center md:px-48 py-32'>
+        <div className='bg-zinc-800 text-white text-center md:px-48 py-20'>
             <img src={heroImage} alt="Hero" className='mx-auto mb-8 w-48 rounded-full object-cover
             transform transition-transform duration-300 hover:scale-105'/>
             <h1 className='text-3xl font-bold'>

@@ -213,7 +213,7 @@ export default function Blog() {
 
   if (error) {
     return (
-      <main className="min-h-screen bg-zinc-800 py-32 text-white">
+      <main className="min-h-screen bg-zinc-800 pt-8 pb-32 text-white">
         <div className="container mx-auto px-8 md:px-16 lg:px-24">
           <div className="mx-auto mb-8 block rounded bg-sky-900 px-12 py-8 shadow-xl shadow-black/30">
             <h1 className="text-center text-4xl font-bold">Blog</h1>
@@ -229,7 +229,7 @@ export default function Blog() {
 
   if (loading) {
     return (
-      <main className="min-h-screen bg-zinc-800 py-32 text-white">
+      <main className="min-h-screen bg-zinc-800 pt-8 pb-32 text-white">
         <div className="container mx-auto px-8 md:px-16 lg:px-24">
           <div className="mx-auto mb-8 block rounded bg-sky-900 px-12 py-8 shadow-xl shadow-black/30">
             <h1 className="text-center text-4xl font-bold">Blog</h1>
@@ -243,7 +243,7 @@ export default function Blog() {
   }
 
   return (
-    <main className="min-h-screen bg-zinc-800 py-32 text-white">
+    <main className="min-h-screen bg-zinc-800 pt-8 pb-32 text-white">
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
         <div className="mx-auto mb-8 block rounded bg-sky-900 px-12 py-8 shadow-xl shadow-black/30">
           <h1 className="text-center text-4xl font-bold">Blog</h1>
