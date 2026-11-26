@@ -51,7 +51,9 @@ const showcaseProjects: ShowcaseProject[] = [
                     // Add one object per contribution:
                     {
                         title: ' test: Add SKIP_WRITE edge case to wallet_startup',
-                        description: 'Verified the SKIP_WRITE edge case in wallet startup.',
+                        description: "Added functional test coverage for an edge case in Bitcoin Core's wallet startup " +
+                        "logic to verify that reloading a wallet already configured to load on startup correctly skips unnecessary " +
+                        "settings writes without generating warnings when running with -nosettings.",
                         url: 'https://github.com/bitcoin/bitcoin/pull/36378',
                         number: 36378,
                         screenshots: [
@@ -69,7 +71,9 @@ const showcaseProjects: ShowcaseProject[] = [
                     },
                     {
                         title: ' test: add getblockfilter test coverage for header-only blocks',
-                        description: 'Added getblockfilter test to cover error code returned for header-only blocks.',
+                        description: "Added functional test coverage for Bitcoin Core's getblockfilter RPC to verify that " +
+                        "it correctly handles requests for blocks with known headers that have never been connected to the active " +
+                        "chain, ensuring the appropriate error code and message are returned.",
                         url: 'https://github.com/bitcoin/bitcoin/pull/36613',
                         number: 36613,
                         screenshots: [
@@ -207,7 +211,7 @@ const futureWorkByProject: { title: string; items: FutureWorkItem[] }[] = [
                 ],
             },
             {
-                title: 'Look into recent bug fixes',
+                title: 'Look into recent release bug fixes',
                 description: 'Extend test coverage for recent bug fixes made in the project',
                 screenshots: [
                 ],
@@ -216,12 +220,40 @@ const futureWorkByProject: { title: string; items: FutureWorkItem[] }[] = [
 ];
 
 export default function Showcase() {
+    const countContributions = (title: ShowcaseCategory['title']) =>
+        showcaseProjects.reduce((total, project) =>
+            total + project.categories.reduce((count, category) =>
+                count + (category.title === title ? category.items.length : 0), 0), 0);
+
     return (
         <main className="min-h-screen bg-zinc-800 py-32 text-white">
             <div className="container mx-auto px-8 md:px-16 lg:px-24">
                 <div className="mb-8 rounded bg-sky-900 px-12 py-8 shadow-xl shadow-black/30">
                     <h1 className="text-center text-4xl font-bold">BTrust Fellowship Showcase</h1>
                 </div>
+
+                <section aria-labelledby="fellowship-stats-heading" className="mx-auto mb-10 max-w-4xl">
+                    <h2 id="fellowship-stats-heading" className="mb-4 text-2xl font-bold">Fellowship Stats</h2>
+                    <p className="mb-4 text-gray-300">PR, review, and issue totals reflect the work showcased below.</p>
+                    <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                        <div className="rounded-lg bg-zinc-700 p-6 text-center shadow-lg">
+                            <dt className="text-sky-200">PRs</dt>
+                            <dd className="mt-2 text-3xl font-bold">{countContributions('PRs')}</dd>
+                        </div>
+                        <div className="rounded-lg bg-zinc-700 p-6 text-center shadow-lg">
+                            <dt className="text-sky-200">Reviews</dt>
+                            <dd className="mt-2 text-3xl font-bold">{countContributions('Reviews')}</dd>
+                        </div>
+                        <div className="rounded-lg bg-zinc-700 p-6 text-center shadow-lg">
+                            <dt className="text-sky-200">Issues</dt>
+                            <dd className="mt-2 text-3xl font-bold">{countContributions('Issues')}</dd>
+                        </div>
+                        <div className="rounded-lg bg-zinc-700 p-6 text-center shadow-lg">
+                            <dt className="text-sky-200">Articles</dt>
+                            <dd className="mt-2 text-3xl font-bold">5</dd>
+                        </div>
+                    </dl>
+                </section>
 
                 <div className="mx-auto max-w-4xl space-y-10">
                     {showcaseProjects.map((project) => {
