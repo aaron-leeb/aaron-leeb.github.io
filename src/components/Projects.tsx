@@ -126,7 +126,7 @@ const Projects = () => {
                             <img 
                                 src={githubProfile.avatar_url} 
                                 alt={githubProfile.login}
-                                className='w-16 h-16 rounded-full flex-shrink-0'
+                                className='w-16 h-16 rounded-full shrink-0'
                             />
                             <div>
                                 <h3 className='text-xl font-bold hover:text-gray-200'><a href={githubProfile.url} target="_blank" rel="noopener noreferrer">{githubProfile.login}</a></h3>
@@ -149,7 +149,7 @@ const Projects = () => {
                                             <span className='truncate'>
                                                 {formatEvent(event.type)} in {event.repo.name}
                                             </span>
-                                            <span className='text-xs text-gray-400 flex-shrink-0'>
+                                            <span className='text-xs text-gray-400 shrink-0'>
                                                 {new Date(event.created_at).toLocaleDateString()}
                                             </span>
                                         </div>

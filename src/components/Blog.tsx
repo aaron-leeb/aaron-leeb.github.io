@@ -85,7 +85,7 @@ const createMarkdownComponents = (sourceUrl?: string): Components => ({
   hr: ({ ...props }) => <hr className="my-8 border-zinc-600" {...props} />,
   img: ({ src, alt, ...props }) => (
     <img
-      className="my-6 max-h-[32rem] w-full rounded-lg object-contain shadow-lg shadow-black/30"
+      className="my-6 max-h-128 w-full rounded-lg object-contain shadow-lg shadow-black/30"
       src={resolveMarkdownUrl(src, sourceUrl)}
       alt={alt ?? ''}
       loading="lazy"
@@ -272,7 +272,7 @@ export default function Blog() {
                         {content}
                       </ReactMarkdown>
                       {!isExpanded && hasOverflow && (
-                        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-zinc-700 via-zinc-700/95 to-transparent" />
+                        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-zinc-700 via-zinc-700/95 to-transparent" />
                       )}
                     </div>
 

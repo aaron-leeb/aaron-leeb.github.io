@@ -281,7 +281,7 @@ export default function Showcase() {
                                                         </video>
                                                     )}
                                                     {item.screenshots && item.screenshots.length > 0 && (
-                                                        <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                        <div className="mt-5 grid grid-cols-1 gap-4">
                                                             {item.screenshots.map((screenshot) => (
                                                                 <figure key={screenshot.src}>
                                                                     <img
@@ -342,7 +342,7 @@ export default function Showcase() {
                                                 <h4 className="text-lg font-bold">{item.title}</h4>
                                                 <p className="mt-2 text-gray-200">{item.description}</p>
                                                 {item.screenshots && item.screenshots.length > 0 && (
-                                                    <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                    <div className="mt-5 grid grid-cols-1 gap-4">
                                                         {item.screenshots.map((screenshot) => (
                                                             <figure key={screenshot.src}>
                                                                 <img

@@ -66,7 +66,7 @@ const Experience = () => {
                                 <Link
                                     to="/showcase"
                                     aria-label="Open BTrust Fellowship showcase"
-                                    className="absolute inset-0 z-10 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-400"
+                                    className="absolute inset-0 z-10 rounded-lg focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-4 focus-visible:ring-offset-zinc-700"
                                 />
                             )}
                         </div>

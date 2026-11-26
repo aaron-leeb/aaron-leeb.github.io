@@ -17,11 +17,11 @@ const Hero = () => {
             </p>
             <div className='mt-24 space-x-8'>
                 <button
-                className='bg-gradient-to-r from-sky-900 to-teal-900 text-white hidden md:inline
+                className='bg-linear-to-r from-sky-900 to-teal-900 text-white hidden md:inline
                 transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full'>
                     <a href="https://github.com/aaron-leeb" target="_blank" rel="noopener noreferrer" className='text-white no-underline'>View My Work</a>
                 </button>
-                <button className='bg-gradient-to-r from-sky-900 to-teal-900 text-white hidden md:inline
+                <button className='bg-linear-to-r from-sky-900 to-teal-900 text-white hidden md:inline
                 transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full'>
                     <a href="Leeb_Aaron_Resume.pdf" download className='text-white no-underline'>Download Resume</a>
                 </button>

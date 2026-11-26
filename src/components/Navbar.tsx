@@ -4,7 +4,7 @@ const Navbar = () => {
     const location = useLocation();
 
     return (
-        <nav className='sticky top-0 z-50 bg-gradient-to-r from-sky-900 to-teal-900 text-white px-2 sm:px-4 md:px-16 lg:px-48'>
+        <nav className='sticky top-0 z-50 bg-linear-to-r from-sky-900 to-teal-900 text-white px-2 sm:px-4 md:px-16 lg:px-48'>
                 <div className='container mx-auto flex items-center justify-between gap-1 py-3 md:py-4'>
                     <Link
                         to="/"
